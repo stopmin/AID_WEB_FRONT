@@ -71,3 +71,10 @@
     <td>파일을 삭제만 한 경우</td>
   </tr>
 </table>
+
+## run server (local)
+
+```
+ npm install react-scripts
+ npm run
+```
