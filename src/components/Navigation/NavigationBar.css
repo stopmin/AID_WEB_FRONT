@@ -22,3 +22,11 @@
 .page-content {
   margin-top: 90px; /* 네비게이션 바 높이 + 페이지와 겹치지 않도록 추가 마진 조정 */
 }
+
+.pages {
+  margin-right: 25px;
+}
+
+.toggle {
+  margin-right: 20px;
+}

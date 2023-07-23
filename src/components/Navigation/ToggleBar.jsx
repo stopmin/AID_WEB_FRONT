@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { NavLink, Route, Routes } from "react-router-dom";
+import { NavLink, Route, Routes, Link } from "react-router-dom";
 import "./ToggleBar.css";
-import Home from "../Page/Home";
-import Contact from "../Page/Contact";
-import About from "../Page/About";
 
 const ToggleBar = () => {
   const [showNav, setShowNav] = useState(false);
@@ -37,13 +34,6 @@ const ToggleBar = () => {
           </li>
         </ul>
       </nav>
-      <main className="main">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
     </div>
   );
 };
