@@ -5,6 +5,7 @@ import Board from "./components/Page/Board";
 import Login from "./components/Page/Login";
 import Introduction from "./components/Page/Introduction";
 import ClubApply from "./components/Page/ClubApply";
+import MainPage from "./components/Page/Main/MainPage";
 
 const App = () => {
   return (
