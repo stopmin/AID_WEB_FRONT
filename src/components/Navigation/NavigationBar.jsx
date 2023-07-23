@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./NavigationBar.css";
+import ToggleBar from "./ToggleBar";
 
 const NavigationBar = () => {
   return (
@@ -9,6 +10,8 @@ const NavigationBar = () => {
       <Link to="/login">로그인</Link>
       <Link to="/board">게시판</Link>
       <Link to="/club-apply">동아리 지원</Link>
+
+      <ToggleBar />
     </div>
   );
 };
