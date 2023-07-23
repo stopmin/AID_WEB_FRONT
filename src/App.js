@@ -4,6 +4,12 @@ import { NavLink, Route, BrowserRouter as Router, Routes } from "react-router-do
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
+// 지민import
+import Introduction from "./components/Page/Introduction";
+import Login from "./components/Page/Login";
+import Board from "./components/Page/Board";
+import ClubApply from "./components/Page/ClubApply";
+import NavigationBar from "./components/Navigation/NavigationBar";
 
 const App = () => {
   const [showNav, setShowNav] = useState(false);
@@ -14,6 +20,13 @@ const App = () => {
 
   return (
     <Router>
+      <Routes>
+        <Route path="/intro" element={<Introduction />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/board" element={<Board />} />
+        <Route path="/club-apply" element={<ClubApply />} />
+      </Routes>
+      <NavigationBar />
       <div className="app">
         <header className="header">
           <div className="navbar-container">
