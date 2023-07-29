@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "SUITE-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7.5rem;
+  background-image: url("../styles/space.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.navigation-bar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 0.75rem;
+  padding-left: 0.3rem;
+}
+
+h1 {
+  font-family: "SUITE-Regular";
+  color: white;
+  margin-left: 2rem;
+  font-display: left;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+h2 {
+  font-family: "SUITE-Regular";
+  color: white;
+  font-weight: lighter;
+  font-size: 3rem;
+}
