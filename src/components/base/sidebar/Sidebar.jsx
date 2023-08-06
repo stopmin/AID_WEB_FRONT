@@ -3,21 +3,33 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import SidebarItem from "./SidebarItem";
 import profile from "./assets/profile.png";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Side = styled.div`
-  padding-top: 10rem;
+  top: 7.5rem;
   display: flex;
   border-right: 1px solid #e0e0e0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 20%;
+  position: relative;
 `;
+
+const HamburgerMenu = styled(GiHamburgerMenu)`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+`;
+
 const Profile = styled.img`
   width: 150px;
   height: 150px;
   border-radius: 100%;
 `;
+
 const Menu = styled.div`
   margin-top: 30px;
   width: 200px;
@@ -35,6 +47,7 @@ function Sidebar() {
   return (
     <Side>
       <Profile src={profile}></Profile>
+      <HamburgerMenu />
       <Menu>
         {menus.map((menu, index) => {
           return (
