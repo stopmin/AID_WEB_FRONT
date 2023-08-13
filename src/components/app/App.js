@@ -2,12 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "../base/header/Header";
-import Sidebar from "../base/sidebar/Sidebar";
 /*Pages import*/
-import Home from "../pages/home/Home";
-import Study from "../pages/study/Study";
-import Board from "../pages/board/Board";
-import Chat from "../pages/chat/Chat";
 import Home from "../pages/home/Home";
 import Submit from "../pages/submit/Submit";
 
@@ -23,8 +18,6 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/submit" element={<Submit />} />
-          <Route path="/board" element={<Board />} />
-          <Route path="/chat" element={<Chat />} />
         </Routes>
       </Center>
     </Router>
