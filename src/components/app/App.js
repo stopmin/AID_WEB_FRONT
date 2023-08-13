@@ -8,7 +8,7 @@ import Home from "../pages/home/Home";
 import Study from "../pages/study/Study";
 import Board from "../pages/board/Board";
 import Chat from "../pages/chat/Chat";
-import Fullpage from "../pages/home/Fullpage";
+import Home from "../pages/home/Home";
 import Submit from "../pages/submit/Submit";
 
 const Center = styled.div`
@@ -21,7 +21,7 @@ const App = () => {
       <Header />
       <Center>
         <Routes>
-          <Route exact path="/" element={<Fullpage />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/submit" element={<Submit />} />
           <Route path="/board" element={<Board />} />
           <Route path="/chat" element={<Chat />} />
