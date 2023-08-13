@@ -1,12 +1,23 @@
 import React from "react";
-import "./assets/Header.css"; // Import the CSS file
+import { Link } from "react-router-dom";
+import "./assets/Header.css";
 
 const Header = () => {
   return (
     <div className="header">
-      <h1>AID</h1>
-      <h2>elopver</h2>
-
+      <h1>
+        <Link to="/" className="no-underline">
+          AID
+        </Link>
+      </h1>
+      <h2>
+        <Link to="/" className="no-underline">
+          eveloper
+        </Link>
+      </h2>
+      <Link to="/submit">
+        <button className="apply-button">지원하기</button>
+      </Link>
       {/* <div>
         <Link to="/intro">동아리 소개</Link>
         <Link to="/login">로그인</Link>

@@ -23,6 +23,49 @@ function Home() {
         <Title>🚀 AID 동아리에 오신 것을 환영합니다</Title>
         <br />
         우리 동아리를 소개하는 글을 쓰고 싶습니다.
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        스크롤 테스트입니다.
       </div>
     </HomeWapper>
   );
