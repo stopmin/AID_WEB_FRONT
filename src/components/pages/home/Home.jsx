@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TechIcons from "./assets/TechIcons.jsx";
+import Page1 from "../page1/Page1.jsx";
 import "./assets/home.css";
 
 const Home = () => {
@@ -23,19 +24,22 @@ const Home = () => {
   return (
     <div className="container">
       <div className="part1">
-        <div> 동아리 소개 1</div>
         <div className="typing-svg-container">
+          <h2>Simple Is The BEST</h2>
           <svg width="435" height="50" xmlns="http://www.w3.org/2000/svg">
             <text x="10" y="30" font-family="Fira Code" font-size="20" fill="#000">
               {typingText}
             </text>
           </svg>
         </div>
+      </div>
+      <div className="part2">
+        <Page1 />
+      </div>
+      <div className="part3">
         <TechIcons />
       </div>
-      <div className="part2">동아리 소개 2</div>
-      <div className="part3">동아리 소개 3</div>
-      <div className="part4">동아리 소개 4</div>
+      <div className="part4">FAQ</div>
     </div>
   );
 };
