@@ -1,8 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
+import { Link, useLocation } from "react-router-dom";
 import "./assets/header.css";
+import ModalExample from "../../modal/Modal";
 
 const Header = () => {
+  const GetField = () => {
+    const axios = require("axios");
+    // axios.get;
+  };
+
+  const location = useLocation();
+
+  console.log(location);
+
   return (
     <div className="header">
       <h1>
@@ -15,15 +26,21 @@ const Header = () => {
           eveloper
         </Link>
       </h2>
-      <Link to="/submit">
-        <button className="apply-button">지원하기</button>
-      </Link>
-      {/* <div>
-        <Link to="/intro">동아리 소개</Link>
-        <Link to="/login">로그인</Link>
-        <Link to="/board">게시판</Link>
-        <Link to="/club-apply">동아리 지원</Link>
-      </div> */}
+      {/* 지원페이지 삼항연산자 */}
+      {location.pathname === "/submit" ? (
+        <>
+          <Link to="/submit">
+            <button className="apply-button">지원하기</button>
+          </Link>
+          <ModalExample />
+        </>
+      ) : (
+        <>
+          <Link to="/submit">
+            <button className="apply-button">지원하기</button>
+          </Link>
+        </>
+      )}
     </div>
   );
 };

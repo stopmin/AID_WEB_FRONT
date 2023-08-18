@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "SUITE-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.Title {
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+.half-Icon {
+  width: 45%;
+  float: left;
+  box-sizing: border-box;
+  font-size: 2rem;
+  margin: 2.2rem;
+  font-family: "SUITE-Regular";
+}
+
+.Dacon {
+  animation: rotate_image 6s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes rotate_image {
+  100% {
+    transforn: rotate(360deg);
+  }
+}
+
+.Dacon,
+.Kaggle,
+.AI {
+  max-width: 11rem; /* Adjust the max-width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.half-Introduction {
+  margin: 2.2rem;
+  font-family: "SUITE-Regular";
+  width: 45%;
+  float: right;
+  box-sizing: border-box;
+
+  text-align: center;
+  border: 2px solid white; /* 테두리 스타일 설정 */
+  padding: 10px; /* 내용과의 간격 조정 */
+  border-radius: 5px; /* 테두리의 모서리를 둥글게 만듦 */
+  box-shadow: 0px 0px 10px rgb(117, 143, 255); /* 테두리 주위에 형광펜 스타일의 그림자 효과 */
+}
+
+.introduction_list {
+  font-size: 1.3rem;
+  text-align: left;
+}

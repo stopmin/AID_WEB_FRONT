@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import TechIcons from "./assets/TechIcons.jsx";
-import Page1 from "../page1/Page1.jsx";
+import Page2 from "../page2/Page2.jsx";
 import "./assets/home.css";
+import AOS from "aos";
+import "aos/dist/aos.css"; // AOS 스타일 시트를 불러옵니다.
 
 const Home = () => {
   const [typingText, setTypingText] = useState("");
@@ -21,6 +23,11 @@ const Home = () => {
     return () => clearInterval(typingInterval);
   }, []);
 
+  // AOS 초기화
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className="container">
       <div className="part1">
@@ -34,9 +41,12 @@ const Home = () => {
         </div>
       </div>
       <div className="part2">
-        <Page1 />
+        {" "}
+        {/* part2에 AOS 적용 */}
+        <Page2 />
       </div>
       <div className="part3">
+        {" "}
         <TechIcons />
       </div>
       <div className="part4">FAQ</div>
