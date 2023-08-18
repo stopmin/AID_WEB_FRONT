@@ -1,8 +1,7 @@
 import { React, useState } from "react";
-import "./assets/submit.css";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Modal } from "../../modal/Modal";
+import axios from "axios";
+import "./assets/submit.css";
 
 const FormField = ({ label, id, value, onChange, ...props }) => (
   <div className="form-group">
@@ -26,6 +25,8 @@ const FormFieldSelect = ({ label, id, children, value, onChange, ...props }) => 
     </select>
   </div>
 );
+
+export { FormField, FormFieldTextArea, FormFieldSelect };
 
 const Submit = () => {
   const navigate = useNavigate();
