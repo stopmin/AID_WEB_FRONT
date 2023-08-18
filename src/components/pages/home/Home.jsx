@@ -34,7 +34,7 @@ const Home = () => {
         <div className="typing-svg-container">
           <h2>Simple Is The BEST</h2>
           <svg width="435" height="50" xmlns="http://www.w3.org/2000/svg">
-            <text x="10" y="30" font-family="Fira Code" font-size="20" fill="#000">
+            <text x="10" y="30" fontFamily="Fira Code" fontSize="20" fill="#000">
               {typingText}
             </text>
           </svg>

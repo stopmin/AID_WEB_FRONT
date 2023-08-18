@@ -13,22 +13,13 @@ const Center = styled.div`
 `;
 
 const App = () => {
-  const handleFormSubmit = async (formData) => {
-    try {
-      const response = await axios.post("/api/submit/create", formData);
-      console.log("POST success:", response.data);
-    } catch (error) {
-      console.error("POST error:", error);
-    }
-  };
-
   return (
     <Router>
       <Header />
       <Center>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/submit" element={<Submit onSubmit={handleFormSubmit} />} />
+          <Route path="/submit" element={<Submit />} />
         </Routes>
       </Center>
     </Router>

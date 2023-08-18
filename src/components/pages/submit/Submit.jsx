@@ -27,6 +27,8 @@ const FormFieldSelect = ({ label, id, children, value, onChange, ...props }) => 
   </div>
 );
 
+export { FormField, FormFieldTextArea, FormFieldSelect };
+
 const Submit = () => {
   const navigate = useNavigate();
 
