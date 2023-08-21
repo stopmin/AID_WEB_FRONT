@@ -1,48 +1,52 @@
-import React from "react";
-
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./assets/header.css";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import ModalExample from "../../modal/Modal";
+import logo from "../../../assets/img/logo.svg";
+import "./assets/Header.css";
 
-const Header = () => {
-  const GetField = () => {
-    const axios = require("axios");
-    // axios.get;
-  };
-
+export const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  console.log(location);
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <div className="header">
-      <h1>
-        <Link to="/" className="no-underline">
-          AID
-        </Link>
-      </h1>
-      <h2>
-        <Link to="/" className="no-underline">
-          eveloper
-        </Link>
-      </h2>
-      {/* 지원페이지 삼항연산자 */}
-      {location.pathname === "/submit" ? (
-        <>
-          <Link to="/submit">
-            <button className="apply-button">지원하기</button>
+    <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+      <Container>
+        <Navbar.Brand>
+          <Link to="/">
+            <img src={logo} alt="AIDeveloper" />
           </Link>
-          <ModalExample />
-        </>
-      ) : (
-        <>
-          <Link to="/submit">
-            <button className="apply-button">지원하기</button>
-          </Link>
-        </>
-      )}
-    </div>
+        </Navbar.Brand>
+        <Nav className="ms-auto">
+          <Nav.Link className="navbar-link">
+            {location.pathname === "/submit" ? (
+              <>
+                <ModalExample />
+              </>
+            ) : (
+              <>
+                <Link to="/submit" className="no-underline">
+                  지원하기
+                </Link>
+              </>
+            )}
+          </Nav.Link>
+        </Nav>
+      </Container>
+    </Navbar>
   );
 };
-
-export default Header;
