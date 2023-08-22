@@ -10,17 +10,17 @@ export const Projects = () => {
   const projects = [
     {
       title: "Git & Python",
-      description: "Git 사용법\nEffective Python",
+      description: "Git/Github 기초와 Python advanced skill",
       imgUrl: projImg1,
     },
     {
       title: "AI Study",
-      description: "수학식 + 파이썬 코드(numpy) + 머신러닝\napi or 모델 사용해서 서비스 제작해보기\ndacon or kaggle 실습",
+      description: "핸즈온 머신러닝, 밑바닥부터 시작하는 딥러닝\n- PyTorch 스터디\n- dacon, kaggle 실습",
       imgUrl: projImg2,
     },
     {
       title: "Project",
-      description: "AI 관련 다양한 프로젝트",
+      description: "AID WEB(React, FastAPI)\n- 본인이 만들고 싶은 서비스 제작",
       imgUrl: projImg3,
     },
   ];
