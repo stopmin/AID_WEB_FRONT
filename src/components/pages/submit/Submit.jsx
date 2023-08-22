@@ -99,35 +99,124 @@ const Submit = () => {
       <form method="post" action="/submit" onSubmit={handleSubmit} className="flex-form">
         <Row>
           <Col size={12} sm={6}>
-            <FormField label="이름" id="name" value={formData.name} onChange={handleChange} placeholder="홍길동" required />
+            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              Name
+            </label>
+            <FormField
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              id="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="홍길동"
+              required
+            />
           </Col>
           <Col size={12} sm={6}>
-            <FormField label="학번(9자리)" id="student_id" value={formData.student_id} onChange={handleChange} placeholder="202012345" required />
+            <label for="studnet_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              Studnet ID
+            </label>
+            <FormField
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              id="student_id"
+              value={formData.student_id}
+              onChange={handleChange}
+              placeholder="202012345"
+              required
+            />
           </Col>
+
           <Col size={12} sm={6}>
-            <FormField label="이메일" id="email" value={formData.email} onChange={handleChange} placeholder="test@naver.com" required />
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              Email
+            </label>
+            <div className="relative mb-6">
+              <div className="absolute inset-y-0 left-0.5 flex items-center pl-3.5 pointer-events-none">
+                <svg
+                  className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 16"
+                >
+                  <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+                  <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+                </svg>
+              </div>
+              <input
+                type="text"
+                id="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="name@pusan.ac.kr"
+              />
+            </div>
           </Col>
+
           <Col size={12} sm={6}>
-            <FormField label="전화번호" id="phone_number" value={formData.phone_number} onChange={handleChange} placeholder="010-1123-41234" required />
+            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              Phone
+            </label>
+            <FormField
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              id="phone_number"
+              value={formData.phone_number}
+              onChange={handleChange}
+              placeholder="010-1234-5678"
+              required
+            />
           </Col>
         </Row>
+
+        <label for="motivate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          motive
+        </label>
         <FormFieldTextArea
-          label="동아리 지원 계기(공백 포함 500자 이내)"
+          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           id="motivation"
           value={formData.motivation}
           onChange={handleChange}
           rows="3"
           name="motivation"
         />
-        <FormFieldTextArea label="프로젝트 경험" id="ai_exp" value={formData.ai_exp} onChange={handleChange} rows="3" name="have_project" />
-        <FormField label="Github 주소" id="github" value={formData.github} onChange={handleChange} />
-        <FormField label="Blog 주소(Tech Blog)" id="blog" value={formData.blog} onChange={handleChange} />
+
+        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          Project experience
+        </label>
+        <FormFieldTextArea
+          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          id="ai_exp"
+          value={formData.ai_exp}
+          onChange={handleChange}
+          rows="3"
+          name="have_project"
+        />
+
+        <label for="github" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          Github
+        </label>
+        <FormField
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          id="github"
+          value={formData.github}
+          onChange={handleChange}
+        />
+
+        <label for="blog" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          Blog
+        </label>
+        <FormField
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          id="blog"
+          value={formData.blog}
+          onChange={handleChange}
+        />
         <Checkbox id="personal_info_agree" isChecked={checked} onChange={handleCheckboxChange}>
           개인 정보 수집 동의
         </Checkbox>
         <div className="submit-btn-container">
           <button type="submit" className={`submit-button ${!checked ? "disabled" : ""}`}>
-            제출하기
+            submit
           </button>
         </div>
       </form>
