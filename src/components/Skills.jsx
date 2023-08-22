@@ -1,30 +1,6 @@
-import kaggle from "../assets/img/kaggle.png";
-import dacon from "../assets/img/dacon.png";
-import ai from "../assets/img/ai.png";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 export const Skills = () => {
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
-
   return (
     <div className="part2">
       <section className="skill" id="skills">
@@ -32,20 +8,28 @@ export const Skills = () => {
           <div className="row">
             <div className="col-12">
               <div className="skill-bx wow zoomIn">
-                <h2>활동내역?</h2>
-                <p>- 동아리 활동 소개 -</p>
-                <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                  <div className="item">
-                    <img src={kaggle} alt="Image" />
+                <h2>Career</h2>
+                {/* <p>동아리 활동 내용 목록은 다음과 같습니다.</p> */}
+                <div className="content-container">
+                  <div className="content-left">
+                    <p>
+                      <h3>활동 내용</h3>
+                      - cs231n, 혼자 공부하는 머신러닝 딥러닝, 오디오 DSP 스터디 등의 스터디 진행 <br />
+                      - 인공지능 대회 참여 <br />- 서비스 제작
+                    </p>
                   </div>
-                  <div className="item">
-                    <img src={dacon} alt="Image" />
+                  <div className="content-right">
+                    <p>
+                      <h3>주요 활동</h3>
+                      - 1개 이상 스터디 필수 참여
+                      <br />
+                      - 주기적으로 세미나 진행
+                      <br />
+                      - 대회/세미나/AI 관련 뉴스 알림
+                      <br />⭐ 올해 취직한 Naver, NCSoft 현업자와의 멘토링
+                    </p>
                   </div>
-                  <div className="item">
-                    <img src={ai} alt="Image" />
-                    <h5>AI</h5>
-                  </div>
-                </Carousel>
+                </div>
               </div>
             </div>
           </div>
