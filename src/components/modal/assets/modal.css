@@ -1,0 +1,86 @@
+.overlay-modal {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-modal h2 {
+  text-align: center;
+}
+
+.submit-check {
+  margin: 30px 0;
+  display: flex;
+  width: 97.5%;
+  white-space: nowrap;
+  align-items: center;
+}
+
+.submit-check input {
+  margin: 0 30px;
+}
+
+.content-modal {
+  margin: 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-modal p {
+  margin: 0 30px;
+}
+
+.content-modal form {
+  margin: 20px 30px;
+}
+
+.button-modal {
+  background-color: #828ab0;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-modal:hover {
+  background-color: #3d74af;
+}
+
+.button-flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 30px;
+}
+
+@media (max-width: 768px) {
+  .submit-check input {
+    margin: 0 10px;
+  }
+
+  .content-modal {
+    margin: 0;
+  }
+
+  .content-modal p {
+    margin: 0 20px;
+  }
+
+  .content-modal form {
+    margin: 20px 10px;
+  }
+
+  .button-flex {
+    margin: 10px 10px;
+  }
+}

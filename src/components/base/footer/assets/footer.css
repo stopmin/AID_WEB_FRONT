@@ -1,0 +1,14 @@
+.footer {
+  padding: 0 0 20px 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #b8b8b8;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
+}
