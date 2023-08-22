@@ -8,6 +8,8 @@ import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/base/footer/Footer";
 import Submit from "./components/pages/submit/Submit";
+import Admin from "./components/pages/admin/Admin";
+import Sender from "./components/pages/admin/Sender"; // Sender 컴포넌트를 import
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
             }
           />
           <Route path="/submit" element={<Submit />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/send" element={<Sender />} />
         </Routes>
       </Router>
     </div>
