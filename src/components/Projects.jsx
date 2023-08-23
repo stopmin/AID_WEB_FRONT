@@ -3,7 +3,6 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
-import TrackVisibility from "react-on-screen";
 import "animate.css";
 
 export const Projects = () => {
@@ -30,25 +29,21 @@ export const Projects = () => {
       <Container>
         <Row>
           <Col size={12}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h2>Curriculum</h2>
-                  <p>다양한 스터디와 프로젝트를 운영하고 있으며, 기존에 없는 스터디 및 프로젝트도 직접 생성하고 모집할 수 있습니다.</p>
-                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                    <Tab.Content id="slideInUp">
-                      <Tab.Pane eventKey="first">
-                        <Row>
-                          {projects.map((project, index) => {
-                            return <ProjectCard key={index} {...project} />;
-                          })}
-                        </Row>
-                      </Tab.Pane>
-                    </Tab.Content>
-                  </Tab.Container>
-                </div>
-              )}
-            </TrackVisibility>
+            <div>
+              <h2>Curriculum</h2>
+              <p>다양한 스터디와 프로젝트를 운영하고 있으며, 기존에 없는 스터디 및 프로젝트도 직접 생성하고 모집할 수 있습니다.</p>
+              <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                <Tab.Content id="slideInUp">
+                  <Tab.Pane eventKey="first">
+                    <Row>
+                      {projects.map((project, index) => {
+                        return <ProjectCard key={index} {...project} />;
+                      })}
+                    </Row>
+                  </Tab.Pane>
+                </Tab.Content>
+              </Tab.Container>
+            </div>
           </Col>
         </Row>
       </Container>

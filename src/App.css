@@ -16,28 +16,6 @@
 }
 
 /************ Fullpage Css ************/
-/* .fullpage {
-  width: 100%;
-  height: calc(100vh - 3rem);
-  margin-top: 3rem;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-}
-
-.fullpage > div[class^="part"] {
-  scroll-snap-align: start;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-::-webkit-scrollbar {
-  width: 0;
-} */
-
 @media (min-width: 770px) {
   .fullpage {
     width: 100%;
