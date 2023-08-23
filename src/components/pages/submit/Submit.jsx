@@ -99,11 +99,11 @@ const Submit = () => {
       <form method="post" action="/submit" onSubmit={handleSubmit} className="flex-form">
         <Row>
           <Col size={12} sm={6}>
-            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 text-white ">
               Name
             </label>
             <FormField
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
               id="name"
               value={formData.name}
               onChange={handleChange}
@@ -112,11 +112,11 @@ const Submit = () => {
             />
           </Col>
           <Col size={12} sm={6}>
-            <label for="studnet_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label for="studnet_id" class="block mb-2 text-sm font-medium text-gray-900 text-white">
               Studnet ID
             </label>
             <FormField
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
               id="student_id"
               value={formData.student_id}
               onChange={handleChange}
@@ -126,13 +126,13 @@ const Submit = () => {
           </Col>
 
           <Col size={12} sm={6}>
-            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 text-white">
               Email
             </label>
             <div className="relative mb-6">
               <div className="absolute inset-y-0 left-0.5 flex items-center pl-3.5 pointer-events-none">
                 <svg
-                  className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  className="w-4 h-4 text-gray-500 text-gray-400"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -147,18 +147,18 @@ const Submit = () => {
                 id="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                 placeholder="name@pusan.ac.kr"
               />
             </div>
           </Col>
 
           <Col size={12} sm={6}>
-            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 text-white">
               Phone
             </label>
             <FormField
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
               id="phone_number"
               value={formData.phone_number}
               onChange={handleChange}
@@ -168,11 +168,11 @@ const Submit = () => {
           </Col>
         </Row>
 
-        <label for="motivate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+        <label for="motivate" class="block mb-2 text-sm font-medium text-gray-900 text-white">
           motive
         </label>
         <FormFieldTextArea
-          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
           id="motivation"
           value={formData.motivation}
           onChange={handleChange}
@@ -180,11 +180,11 @@ const Submit = () => {
           name="motivation"
         />
 
-        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 text-white">
           Project experience
         </label>
         <FormFieldTextArea
-          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
           id="ai_exp"
           value={formData.ai_exp}
           onChange={handleChange}
@@ -192,21 +192,21 @@ const Submit = () => {
           name="have_project"
         />
 
-        <label for="github" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+        <label for="github" class="block mb-2 text-sm font-medium text-gray-900 text-white">
           Github
         </label>
         <FormField
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
           id="github"
           value={formData.github}
           onChange={handleChange}
         />
 
-        <label for="blog" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+        <label for="blog" class="block mb-2 text-sm font-medium text-gray-900 text-white">
           Blog
         </label>
         <FormField
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
           id="blog"
           value={formData.blog}
           onChange={handleChange}
