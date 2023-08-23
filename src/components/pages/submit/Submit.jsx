@@ -179,7 +179,7 @@ export const Submit = () => {
         </Row>
 
         <label for="motivate" class="block mb-2 text-sm font-medium text-gray-900 text-white">
-          motive
+          Motive
         </label>
         <FormFieldTextArea
           class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
