@@ -25,11 +25,6 @@ export const Banner = () => {
       setDelta((prevDelta) => prevDelta / 2);
     }
 
-    // if (!isDeleting && updatedText === fullText) {
-    //   setIsDeleting(true);
-    //   setIndex((prevIndex) => prevIndex - 1);
-    //   setDelta(period);
-    // } else
     if (isDeleting && updatedText === "") {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
