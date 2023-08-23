@@ -16,19 +16,21 @@ export const Header = () => {
           </Link>
         </Navbar.Brand>
         <Nav className="ms-auto">
-          <Nav.Link className="navbar-link">
-            {location.pathname === "/submit" ? (
-              <>
-                <ModalExample />
-              </>
-            ) : (
-              <>
-                <Link to="/submit" className="no-underline">
-                  지원하기
-                </Link>
-              </>
-            )}
-          </Nav.Link>
+          {location.pathname !== "/admin" && (
+            <Nav.Link className="navbar-link">
+              {location.pathname === "/submit" ? (
+                <>
+                  <ModalExample />
+                </>
+              ) : (
+                <>
+                  <Link to="/submit" className="no-underline">
+                    지원하기
+                  </Link>
+                </>
+              )}
+            </Nav.Link>
+          )}
         </Nav>
       </Container>
     </Navbar>
