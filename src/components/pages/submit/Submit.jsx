@@ -38,9 +38,30 @@ const Checkbox = ({ id, children, value, isChecked, onChange }) => (
 export { FormField, FormFieldTextArea, FormFieldSelect, Checkbox };
 
 export const Submit = () => {
+  /* 제출 성공할 경우 toast */
+  const [isSuccessShown, setIsSuccessShown] = useState(false);
+  const [submitResponseId, setSubmitResponseId] = useState(null);
+
+  const showSuccessToast = () => {
+    setIsSuccessShown(true);
+    setTimeout(() => {
+      setIsSuccessShown(false);
+    }, 30000);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+
+    if (isSuccessShown) {
+      const timeout = setTimeout(() => {
+        setIsSuccessShown(false);
+        setSubmitResponseId(null);
+        navigate("/");
+      }, 15000); // 15초 후에 페이지 이동
+
+      return () => clearTimeout(timeout);
+    }
+  }, [isSuccessShown]);
 
   const navigate = useNavigate();
 
@@ -68,8 +89,9 @@ export const Submit = () => {
     try {
       const response = await axios.post("https://pnuaid.com/api/submit/create", formData);
       console.log("POST success:", response.data);
-      navigate("/");
-      alert("지원이 성공되었습니다.");
+      showSuccessToast();
+      setSubmitResponseId(response.data.id);
+      // navigate("/");
     } catch (error) {
       console.error("POST error:", error);
       /* 이메일 양식 확인 이외의 예외 처리 필요! */
@@ -130,18 +152,6 @@ export const Submit = () => {
               Email
             </label>
             <div className="relative mb-6">
-              <div className="absolute inset-y-0 left-0.5 flex items-center pl-3.5 pointer-events-none">
-                <svg
-                  className="w-4 h-4 text-gray-500 text-gray-400"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 16"
-                >
-                  <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
-                  <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
-                </svg>
-              </div>
               <input
                 type="text"
                 id="email"
@@ -219,6 +229,30 @@ export const Submit = () => {
             submit
           </button>
         </div>
+        {isSuccessShown && (
+          <div
+            id="toast-notification"
+            className="w-full max-w-xs p-4  rounded-lg shadow bg-gray-800 text-gray-300"
+            role="alert"
+            style={{
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <div className="flex items-center mb-3">
+              <span className="mb-1 text-sm font-semibold text-white">성공적으로 지원하셨습니다.</span>
+            </div>
+            <div className="flex items-center">
+              <div className="ml-3 text-sm font-normal">
+                <div className="text-sm font-semibold text-white">{submitResponseId}</div>
+                <div className="text-sm font-normal">지원서 수정을 위한 ID입니다.</div>
+                <span className="text-xs font-medium text-blue-500">15초 뒤 페이지가 넘어갑니다.</span>
+              </div>
+            </div>
+          </div>
+        )}
       </form>
     </div>
   );
