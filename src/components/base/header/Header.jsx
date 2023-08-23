@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import ModalExample from "../../modal/Modal";
+import { ModalExample } from "../../modal/Modal";
 import logo from "../../../assets/img/logo.svg";
 import "./assets/Header.css";
 

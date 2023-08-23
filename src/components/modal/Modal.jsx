@@ -8,7 +8,7 @@ import "./assets/modal.css";
 
 Modal.setAppElement("#root");
 
-const ModalExample = () => {
+export const ModalExample = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [text, setText] = useState("");
   const [submit_id, setSubmitId] = useState("");
@@ -186,5 +186,3 @@ const ModalExample = () => {
     </div>
   );
 };
-
-export default ModalExample;
