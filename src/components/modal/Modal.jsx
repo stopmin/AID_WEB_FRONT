@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Modal from "react-modal";
 import axios from "axios";
 import { FormField, FormFieldTextArea } from "../pages/submit/Submit";
@@ -96,9 +98,14 @@ const ModalExample = () => {
       </button>
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} overlayClassName="overlay-modal">
         <div className="content-modal">
-          <h2>지원서 수정</h2>
+          <div className="header-modal">
+            <div></div>
+            <h2>지원서 수정</h2>
+            <span className="close-icon" onClick={closeModal}>
+              <FontAwesomeIcon icon={faTimes} />
+            </span>
+          </div>
           <div className="submit-check">
-            {/* 내 지원서 조회: */}
             <input type="text" id="applicant_id" placeholder="ID를 입력해주세요" onChange={onChange}></input>
             <button onClick={onClick} className="button-modal">
               조회하기

@@ -11,8 +11,17 @@
   align-items: center;
 }
 
+.header-modal {
+  display: flex;
+  justify-content: space-between;
+}
+
 .overlay-modal h2 {
   text-align: center;
+}
+
+.close-icon {
+  cursor: pointer;
 }
 
 .submit-check {
