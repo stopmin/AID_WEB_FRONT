@@ -1,30 +1,14 @@
-import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import ModalExample from "../../modal/Modal";
+import { ModalExample } from "../../modal/Modal";
 import logo from "../../../assets/img/logo.svg";
 import "./assets/Header.css";
 
 export const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", onScroll);
-
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+    <Navbar expand="md">
       <Container>
         <Navbar.Brand>
           <Link to="/">

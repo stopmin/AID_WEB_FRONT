@@ -37,7 +37,7 @@ const Checkbox = ({ id, children, value, isChecked, onChange }) => (
 
 export { FormField, FormFieldTextArea, FormFieldSelect, Checkbox };
 
-const Submit = () => {
+export const Submit = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -180,7 +180,7 @@ const Submit = () => {
           name="motivation"
         />
 
-        <label for="project_experience" class="block mb-2 text-sm font-medium text-gray-900 text-white">
+        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 text-white">
           Project experience
         </label>
         <FormFieldTextArea
@@ -223,5 +223,3 @@ const Submit = () => {
     </div>
   );
 };
-
-export default Submit;
