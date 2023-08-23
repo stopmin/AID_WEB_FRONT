@@ -7,15 +7,13 @@ import { Home } from "./components/Home";
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Header />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/submit" element={<Submit />} />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/submit" element={<Submit />} />
+      </Routes>
+    </Router>
   );
 }
 
