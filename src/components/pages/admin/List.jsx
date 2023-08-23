@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Modal } from "react-bootstrap";
 import Detail from "./Detail";
+import Login from "./Login";
 
-const List = ({ posts }) => {
+const List = ({ posts, username, password }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
 
@@ -41,19 +42,16 @@ const List = ({ posts }) => {
       </div>
       {showModal && (
         <Modal show={showModal} onHide={closeModal}>
-          <Detail post={selectedPost} closeModal={closeModal} />
+          <Detail post={selectedPost} closeModal={closeModal} username={username} password={password} />
         </Modal>
       )}
     </div>
   );
 };
 
-// ... 나머지 코드 ...
-
 const PaginationSection = ({ totalPosts, currentPage, postsPerPage, paginate, currentPosts }) => {
   const pageNumbers = [];
 
-  /* pagination */
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
   }
@@ -105,35 +103,41 @@ const PaginationSection = ({ totalPosts, currentPage, postsPerPage, paginate, cu
   );
 };
 
-const ContentSection = ({ postsPerPage }) => {
+const ContentSection = ({ username, password, postsPerPage }) => {
   const [contentInfo, setContentInfo] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const url = "https://pnuaid.com/api/admin/read_all";
-    const username = "aidpnu2023";
-    const password = "aidpnu99!@";
-    const base64encodedData = btoa(`${username}:${password}`);
+    const fetchData = async () => {
+      const url = "https://pnuaid.com/api/admin/read_all";
+      const base64encodedData = btoa(`${username}:${password}`);
 
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Basic ${base64encodedData}`,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
+      try {
+        const response = await fetch(url, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Basic ${base64encodedData}`,
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
         setIsLoaded(true);
         setItems(data);
         setContentInfo(data);
-      })
-      .catch((error) => {
-        console.error("GET error:", error);
-      });
-  }, []);
+      } catch (error) {
+        alert("아이디와 비밀번호가 잘못되었습니다.");
+      }
+    };
+
+    fetchData();
+  }, [username, password]);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -142,7 +146,7 @@ const ContentSection = ({ postsPerPage }) => {
 
   return (
     <div>
-      <List posts={currentPosts} />
+      <List posts={currentPosts} password={password} username={username} />
       <nav>
         <PaginationSection totalPosts={contentInfo.length} currentPage={currentPage} postsPerPage={postsPerPage} paginate={paginate} />
       </nav>

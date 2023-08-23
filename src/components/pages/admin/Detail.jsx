@@ -2,30 +2,30 @@ import { React, useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import axios from "axios";
 
-const Detail = ({ post, closeModal }) => {
+const Detail = ({ post, closeModal, username, password }) => {
   const handlePassClick = async () => {
-    // Pass 버튼을 누를 때 is_pass 값을 true로 변경
     const updatedFormData = {
       submit_id: post._id,
       status: true,
     };
-
     try {
       const response = await axios.post("https://pnuaid.com/api/admin/change_status", updatedFormData, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Basic ${btoa("aidpnu2023:aidpnu99!@")}`,
+          Authorization: `Basic ${btoa(`${username}:${password}`)}`,
         },
       });
-      console.log("Status changed successfully:", response.data);
+      console.log("Status changed successfully:", updatedFormData.status);
       closeModal();
     } catch (error) {
       console.error("Post error: ", error);
     }
   };
 
+  console.log(username);
+  console.log(password);
+
   const handleNoPassClick = async () => {
-    // No-Pass 버튼을 누를 때 is_pass 값을 false로 변경
     const updatedFormData = {
       submit_id: post._id,
       status: false,
@@ -35,10 +35,10 @@ const Detail = ({ post, closeModal }) => {
       const response = await axios.post("https://pnuaid.com/api/admin/change_status", updatedFormData, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Basic ${btoa("aidpnu2023:aidpnu99!@")}`,
+          Authorization: `Basic ${btoa(`${username}:${password}`)}`,
         },
       });
-      console.log("Status changed successfully:", response.data);
+      console.log("Status changed successfully:", updatedFormData.status);
       closeModal();
     } catch (error) {
       console.error("Post error: ", error);
@@ -172,10 +172,6 @@ const Detail = ({ post, closeModal }) => {
               disabled
             ></input>
           </div>
-
-          {/* <h2 className="text-black">{post.name}</h2>
-          <p>{post.email}</p> */}
-          {/* Other details you want to display */}
 
           <div class="flex items-center p-6 space-x-2 border-t rounded-b border-gray-600">
             <button

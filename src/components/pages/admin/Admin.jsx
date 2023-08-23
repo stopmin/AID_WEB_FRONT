@@ -10,6 +10,12 @@ const Admin = () => {
 
   /* admin 접속 시 로그인 창 바로 뜨게 하기 */
   const [showLogin, setShowLogin] = useState(true);
+  const [loginInfo, setLoginInfo] = useState({ username: "", password: "" });
+
+  const handleLogin = (username, password) => {
+    setLoginInfo({ username, password });
+    setShowLogin(false);
+  };
 
   return (
     <div className="items-center flex justify-center">
@@ -17,15 +23,20 @@ const Admin = () => {
         <Container>
           <div className="text-2xl text-center font-border">Admin Page</div>
           <br />
-          <ContentSection currentPage={currentPage} postsPerPage={postsPerPage} />
-
-          <Link to="/admin/send">
-            <div className="text-center mt-4">
-              <button className="opacity-50 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                Send Mail
-              </button>
-            </div>
-          </Link>
+          {showLogin ? (
+            <Login onLogin={handleLogin} />
+          ) : (
+            <>
+              <ContentSection username={loginInfo.username} password={loginInfo.password} currentPage={currentPage} postsPerPage={postsPerPage} />
+              <Link to="/admin/send">
+                <div className="text-center mt-4">
+                  <button className="opacity-50 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                    Send Mail
+                  </button>
+                </div>
+              </Link>
+            </>
+          )}
         </Container>
       </section>
     </div>

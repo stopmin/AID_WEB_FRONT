@@ -180,7 +180,7 @@ const Submit = () => {
           name="motivation"
         />
 
-        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 text-white">
+        <label for="project_experience" class="block mb-2 text-sm font-medium text-gray-900 text-white">
           Project experience
         </label>
         <FormFieldTextArea
