@@ -37,7 +37,7 @@ const Checkbox = ({ id, children, value, isChecked, onChange }) => (
 
 export { FormField, FormFieldTextArea, FormFieldSelect, Checkbox };
 
-const Submit = () => {
+export const Submit = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -134,5 +134,3 @@ const Submit = () => {
     </div>
   );
 };
-
-export default Submit;

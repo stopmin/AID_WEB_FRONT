@@ -3,7 +3,7 @@ import { Skills } from "./Skills";
 import { Projects } from "./Projects";
 import { Contact } from "./Contact";
 
-const Home = () => {
+export const Home = () => {
   return (
     <div className="fullpage">
       <div className="part1">
@@ -21,5 +21,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;
