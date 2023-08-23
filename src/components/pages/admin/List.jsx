@@ -3,18 +3,17 @@ import { Row, Col } from "react-bootstrap";
 
 const List = ({ posts }) => {
   return (
-    <div class="p-5 mb-4 border border-gray-100 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 bg-black">
-      <time class="text-lg font-semibold text-gray-900 text-white">Applicants</time>
+    <div class="p-5 mb-4 border border-gray-100 rounded-lg bg-gray-50 bg-gray-800 border-gray-700 bg-black">
       <Row>
         {posts.map((post, index) => (
-          <Col class="mt-3 divide-y divider-gray-200 dark:divide-gray-700" key={index} md={4} lg={3} className="mb-4">
-            <div class="items-center block p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700">
+          <Col class="mt-3 divide-y divider-gray-200 divide-gray-700" key={index} md={4} lg={3} className="mb-4">
+            <div class="items-center block p-3 sm:flex hover:bg-gray-100 hover:bg-gray-700">
               <a>
                 <div class="text-base font-normal">
-                  <span class="font-medium text-gray-900 dark:text-white">{post.name}</span> submited{" "}
+                  <span class="font-medium text-gray-900 text-white">{post.name}</span> submited{" "}
                 </div>
-                <div class="text-sm font-normal">{post.motivation}</div>
-                <span class="inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400">
+                {/* <div class="text-sm font-normal">{post.motivation}</div> */}
+                <span class="inline-flex items-center text-xs font-normal text-gray-500 text-gray-400">
                   <svg class="w-2.5 h-2.5 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19ZM8.374 17.4a7.6 7.6 0 0 1-5.9-7.4c0-.83.137-1.655.406-2.441l.239.019a3.887 3.887 0 0 1 2.082 2.5 4.1 4.1 0 0 0 2.441 2.8c1.148.522 1.389 2.007.732 4.522Zm3.6-8.829a.997.997 0 0 0-.027-.225 5.456 5.456 0 0 0-2.811-3.662c-.832-.527-1.347-.854-1.486-1.89a7.584 7.584 0 0 1 8.364 2.47c-1.387.208-2.14 2.237-2.14 3.307a1.187 1.187 0 0 1-1.9 0Zm1.626 8.053-.671-2.013a1.9 1.9 0 0 1 1.771-1.757l2.032.619a7.553 7.553 0 0 1-3.132 3.151Z" />
                   </svg>
@@ -41,7 +40,7 @@ const PaginationSection = ({ totalPosts, currentPage, postsPerPage, paginate }) 
         <li>
           <a
             href="#"
-            className="flex items-center justify-center px-4 h-10 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            className="flex items-center justify-center px-4 h-10 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white"
           >
             Previous
           </a>
@@ -53,8 +52,8 @@ const PaginationSection = ({ totalPosts, currentPage, postsPerPage, paginate }) 
               onClick={() => paginate(number)}
               className={`flex items-center justify-center px-4 h-10 leading-tight ${
                 number === currentPage
-                  ? "text-blue-600 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:bg-gray-700 dark:text-white dark:hover:text-white"
-                  : "text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                  ? "text-blue-600 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 bg-gray-700 text-white hover:text-white"
+                  : "text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white"
               }`}
             >
               {number}
@@ -64,7 +63,7 @@ const PaginationSection = ({ totalPosts, currentPage, postsPerPage, paginate }) 
         <li>
           <a
             href="#"
-            className="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            className="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white"
           >
             Next
           </a>
