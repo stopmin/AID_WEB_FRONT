@@ -3,7 +3,7 @@ nav.navbar {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 9999;
+  z-index: 10;
   transition: 0.32s ease-in-out;
 }
 

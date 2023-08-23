@@ -25,7 +25,7 @@ const List = ({ posts }) => {
               <div class="items-center block p-3 sm:flex hover:bg-gray-100 hover:bg-gray-700">
                 <a onClick={() => openModal(post)}>
                   <div class="text-base font-normal">
-                    <span class="font-medium text-gray-900 text-white">{post.name}</span> submited{" "}
+                    <span class="font-medium text-gray-900 text-white">{post.name}</span>
                   </div>
                   <span class="inline-flex items-center text-xs font-normal text-gray-500 text-gray-400">
                     <svg class="w-2.5 h-2.5 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -41,7 +41,7 @@ const List = ({ posts }) => {
       </div>
       {showModal && (
         <Modal show={showModal} onHide={closeModal}>
-          <Detail post={selectedPost} />
+          <Detail post={selectedPost} closeModal={closeModal} />
         </Modal>
       )}
     </div>

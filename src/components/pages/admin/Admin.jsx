@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Feed, { ContentSection } from "./List"; // ContentSection 컴포넌트를 불러옴
+import { ContentSection } from "./List"; // ContentSection 컴포넌트를 불러옴
+import Login from "./Login";
 
 const Admin = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(12);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  /* admin 접속 시 로그인 창 바로 뜨게 하기 */
+  const [showLogin, setShowLogin] = useState(true);
 
   return (
     <div className="items-center flex justify-center">
