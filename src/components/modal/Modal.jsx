@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Modal from "react-modal";
@@ -96,18 +97,25 @@ export const ModalExample = () => {
       <button className="no-underline" onClick={openModal}>
         내 지원서 수정하기
       </button>
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} overlayClassName="overlay-modal">
-        <div className="content-modal">
-          <div className="header-modal">
-            <div></div>
-            <h2>지원서 수정</h2>
-            <span className="close-icon" onClick={closeModal}>
-              <FontAwesomeIcon icon={faTimes} />
-            </span>
+      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} overlayClassName="overlay-modal" className="modal">
+        <div class="relative rounded-lg shadow bg-gray-700 h-full w-full max-w-screen-lg p-6  max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <div class="flex items-center justify-between p-2 border-b rounded-t border-gray-600">
+            <h3 class="text-xl font-semibold text-white">지원서 수정</h3>
+            <button
+              type="button"
+              class="text-gray-400 bg-transparent hover:bg-gray-200 hover: rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center hover:bg-gray-600 hover:text-white"
+              data-modal-hide="staticModal"
+              onClick={closeModal}
+            >
+              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
           </div>
           <div className="submit-check">
             <input type="text" id="applicant_id" placeholder="ID를 입력해주세요" onChange={onChange}></input>
-            <button onClick={onClick} className="button-modal">
+            <button onClick={onClick} className="button-modal search">
               조회하기
             </button>
           </div>
@@ -116,68 +124,117 @@ export const ModalExample = () => {
           {!errorMessage && !isDataFetched && <p>지원서 내용을 조회해주세요.</p>}
           {applicantData && (
             <>
-              {/* <h3>내 지원서</h3> */}
-              <form>
-                <FormField
-                  label="이름"
-                  id="name"
-                  value={applicantData.name}
-                  onChange={(e) => setApplicantData({ ...applicantData, name: e.target.value })}
-                  placeholder="홍길동"
-                  required
-                />
-                <FormField
-                  label="이메일"
-                  id="email"
-                  value={applicantData.email}
-                  onChange={(e) => setApplicantData({ ...applicantData, email: e.target.value })}
-                  placeholder="test@naver.com"
-                  required
-                />
-                <FormField
-                  label="학번(9자리)"
-                  id="student_id"
-                  value={applicantData.student_id}
-                  onChange={(e) => setApplicantData({ ...applicantData, student_id: e.target.value })}
-                  placeholder="202012345"
-                  required
-                />
-                <FormFieldTextArea
-                  label="동아리 지원 계기(공백 포함 500자 이내)"
+              <div class="p-6 max-w-screen-lg w-full">
+                <Row>
+                  <Col size={12} sm={6}>
+                    <label for="name" class="block mb-2 text-sm font-medium  text-white ">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      class="mb-6  border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                      value={applicantData.name}
+                      onChange={(e) => setApplicantData({ ...applicantData, name: e.target.value })}
+                      placeholder="홍길동"
+                      required
+                    ></input>
+                  </Col>
+                  <Col size={12} sm={6}>
+                    <label for="email" class="block mb-2 text-sm font-medium  text-white ">
+                      Email
+                    </label>
+                    <input
+                      type="text"
+                      id="email"
+                      class="mb-6  border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                      value={applicantData.email}
+                      onChange={(e) => setApplicantData({ ...applicantData, email: e.target.value })}
+                      placeholder="test@naver.com"
+                      required
+                    ></input>
+                  </Col>
+                  <Col size={12} sm={6}>
+                    <label for="student_id" class="block mb-2 text-sm font-medium  text-white ">
+                      Studnet ID
+                    </label>
+                    <input
+                      type="text"
+                      id="student_id"
+                      class="mb-6  border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                      value={applicantData.student_id}
+                      onChange={(e) => setApplicantData({ ...applicantData, student_id: e.target.value })}
+                      placeholder="202012345"
+                      required
+                    ></input>
+                  </Col>
+                  <Col size={12} sm={6}>
+                    <label for="phone" class="block mb-2 text-sm font-medium  text-white ">
+                      Phone
+                    </label>
+                    <input
+                      type="text"
+                      id="phone"
+                      class="mb-6  border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                      value={applicantData.phone}
+                      onChange={(e) => setApplicantData({ ...applicantData, phone: e.target.value })}
+                      placeholder="010-1234-5678"
+                      required
+                    ></input>
+                  </Col>
+                </Row>
+                <label for="motivate" class="block mb-2 text-sm font-medium  text-white ">
+                  Motive
+                </label>
+                <textarea
                   id="motivation"
+                  rows="4"
+                  class="mb-6 block p-2.5 w-full text-sm  bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
                   value={applicantData.motivation}
                   onChange={(e) => setApplicantData({ ...applicantData, motivation: e.target.value })}
-                  rows="3"
-                  name="motivation"
-                />
-                <FormFieldTextArea
-                  label="프로젝트 경험"
+                  required
+                ></textarea>
+                <label for="ai_exp" class="block mb-2 text-sm font-medium  text-white ">
+                  Project experience
+                </label>
+                <textarea
                   id="ai_exp"
+                  rows="4"
+                  class="mb-6 block p-2.5 w-full text-sm  bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
                   value={applicantData.ai_exp}
                   onChange={(e) => setApplicantData({ ...applicantData, ai_exp: e.target.value })}
-                  rows="3"
-                  name="have_project"
-                />
-                <FormField
-                  label="Github 주소"
+                  required
+                ></textarea>
+                <label for="github" class="block mb-2 text-sm font-medium  text-white ">
+                  Github
+                </label>
+                <textarea
                   id="github"
+                  rows="4"
+                  class="mb-6 block p-2.5 w-full text-sm  bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
                   value={applicantData.github}
                   onChange={(e) => setApplicantData({ ...applicantData, github: e.target.value })}
-                />
-                <FormField
-                  label="Blog 주소(Tech Blog)"
+                  required
+                ></textarea>
+                <label for="blog" class="block mb-2 text-sm font-medium  text-white ">
+                  Blog
+                </label>
+                <textarea
                   id="blog"
+                  rows="4"
+                  class="block p-2.5 w-full text-sm  bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
                   value={applicantData.blog}
                   onChange={(e) => setApplicantData({ ...applicantData, blog: e.target.value })}
-                />
-              </form>
-              <div className="button-flex">
-                <button className="button-modal" onClick={deleteApplicantData}>
-                  지원서 삭제
-                </button>
-                <button className="button-modal" onClick={updateApplicantData}>
-                  수정
-                </button>
+                  required
+                ></textarea>
+                <div className="button-flex">
+                  <button className="button-modal" onClick={deleteApplicantData}>
+                    지원서 삭제
+                  </button>
+                  <button className="button-modal" onClick={updateApplicantData}>
+                    수정
+                  </button>
+                </div>
               </div>
             </>
           )}
