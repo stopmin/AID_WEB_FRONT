@@ -169,15 +169,15 @@ export const ModalExample = () => {
                     ></input>
                   </Col>
                   <Col size={12} sm={6}>
-                    <label for="phone" class="block mb-2 text-sm font-medium  text-white ">
+                    <label for="phone_number" class="block mb-2 text-sm font-medium  text-white ">
                       Phone
                     </label>
                     <input
                       type="text"
-                      id="phone"
+                      id="phone_number"
                       class="mb-6  border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
-                      value={applicantData.phone}
-                      onChange={(e) => setApplicantData({ ...applicantData, phone: e.target.value })}
+                      value={applicantData.phone_number}
+                      onChange={(e) => setApplicantData({ ...applicantData, phone_number: e.target.value })}
                       placeholder="010-1234-5678"
                       required
                     ></input>
