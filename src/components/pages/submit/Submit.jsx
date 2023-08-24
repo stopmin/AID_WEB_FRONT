@@ -88,12 +88,9 @@ export const Submit = () => {
 
     try {
       const response = await axios.post("https://pnuaid.com/api/submit/create", formData);
-      console.log("POST success:", response.data);
       showSuccessToast();
       setSubmitResponseId(response.data.id);
-      // navigate("/");
     } catch (error) {
-      console.error("POST error:", error);
       /* 이메일 양식 확인 이외의 예외 처리 필요! */
       alert("이메일 양식을 지켜주세요!");
     }

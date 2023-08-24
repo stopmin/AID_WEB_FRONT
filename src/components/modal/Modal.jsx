@@ -18,18 +18,14 @@ export const ModalExample = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    console.log(submit_id);
-
     if (submit_id) {
       axios
         .get(`https://pnuaid.com/api/submit/read?submit_id=${submit_id}`)
         .then((response) => {
           setApplicantData(response.data);
           setIsDataFetched(true);
-          console.log(response.data);
         })
         .catch((error) => {
-          console.error("GET error:", error);
           setApplicantData(null);
           setIsDataFetched(true);
           setErrorMessage("ID를 다시 확인해주세요.");
@@ -65,31 +61,22 @@ export const ModalExample = () => {
   const updateApplicantData = async () => {
     try {
       await axios.put(`https://pnuaid.com/api/submit/modify?submit_id=${submit_id}`, applicantData);
-      console.log("PUT success");
       const result = axios.get(`https://pnuaid.com/api/submit/read?submit_id=${submit_id}`);
-      console.log(result);
       closeModal();
       alert("수정이 완료되었습니다.");
-    } catch (error) {
-      console.error("PUT error:", error);
-    }
+    } catch (error) {}
   };
 
   const deleteApplicantData = async () => {
     try {
       await axios.delete(`https://pnuaid.com/api/submit/cancle?submit_id=${submit_id}`);
-      console.log("DELETE success");
       closeModal();
       setSubmitId("");
       setApplicantData(null);
       setIsDataFetched(false);
       setErrorMessage("");
       alert("삭제가 완료되었습니다.");
-      // const result = axios.get(`https://pnuaid.com/api/submit/read?submit_id=${submit_id}`);
-      // console.log(result);
-    } catch (error) {
-      console.error("DELETE error:", error);
-    }
+    } catch (error) {}
   };
 
   return (
@@ -141,20 +128,6 @@ export const ModalExample = () => {
                     ></input>
                   </Col>
                   <Col size={12} sm={6}>
-                    <label for="email" class="block mb-2 text-sm font-medium  text-white ">
-                      Email
-                    </label>
-                    <input
-                      type="text"
-                      id="email"
-                      class="mb-6  border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
-                      value={applicantData.email}
-                      onChange={(e) => setApplicantData({ ...applicantData, email: e.target.value })}
-                      placeholder="test@naver.com"
-                      required
-                    ></input>
-                  </Col>
-                  <Col size={12} sm={6}>
                     <label for="student_id" class="block mb-2 text-sm font-medium  text-white ">
                       Studnet ID
                     </label>
@@ -165,6 +138,20 @@ export const ModalExample = () => {
                       value={applicantData.student_id}
                       onChange={(e) => setApplicantData({ ...applicantData, student_id: e.target.value })}
                       placeholder="202012345"
+                      required
+                    ></input>
+                  </Col>
+                  <Col size={12} sm={6}>
+                    <label for="email" class="block mb-2 text-sm font-medium  text-white ">
+                      Email
+                    </label>
+                    <input
+                      type="text"
+                      id="email"
+                      class="mb-6  border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                      value={applicantData.email}
+                      onChange={(e) => setApplicantData({ ...applicantData, email: e.target.value })}
+                      placeholder="test@naver.com"
                       required
                     ></input>
                   </Col>
