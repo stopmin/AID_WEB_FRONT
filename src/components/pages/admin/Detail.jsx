@@ -89,7 +89,7 @@ const Detail = ({ post, closeModal, username, password }) => {
               </Col>
               <Col size={12} sm={6}>
                 <label for="studnet_id" class="block mb-2 text-sm font-medium  text-white">
-                  Studnet ID
+                  Student ID
                 </label>
                 <input
                   type="text"
@@ -160,7 +160,7 @@ const Detail = ({ post, closeModal, username, password }) => {
               value={post.github}
               disabled
             ></input>
-            <label for="github" class="block mb-2 text-sm font-medium  text-white">
+            <label for="blog" class="block mb-2 text-sm font-medium  text-white">
               Blog
             </label>
             <input
@@ -168,7 +168,7 @@ const Detail = ({ post, closeModal, username, password }) => {
               id="disabled-input"
               aria-label="disabled input"
               class="mb-6  border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
-              value={post.phone_number}
+              value={post.blog}
               disabled
             ></input>
           </div>
