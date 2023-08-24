@@ -1,16 +1,16 @@
 import { useState } from "react";
-const checkAdmin = (username) => {
-  console.log(username);
-};
 
-const Login = () => {
-  //   const [username, putUsername] = useState("");
-  //   const [username, putUsername] = useState("");
+const Login = ({ onLogin }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // console.log("Username:", username);
-    // console.log("Password:", password);
+    console.log("Username:", username);
+    console.log("Password:", password);
+
+    onLogin(username, password);
   };
   return (
     <div
@@ -32,6 +32,8 @@ const Login = () => {
                   type="ID"
                   name="username"
                   id="username"
+                  value={username}
+                  onChange={(event) => setUsername(event.target.value)}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                   placeholder="ID"
                   required
@@ -43,6 +45,8 @@ const Login = () => {
                 </label>
                 <input
                   type="password"
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
                   name="password"
                   id="password"
                   placeholder="••••••••"
