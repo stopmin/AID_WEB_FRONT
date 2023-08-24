@@ -1,3 +1,13 @@
+.modal {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6rem;
+  height: 85%;
+}
+
 .overlay-modal {
   position: fixed;
   top: 50px;
@@ -5,50 +15,28 @@
   width: 100%;
   height: 95%;
   background-color: rgba(0, 0, 0, 0.5);
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-modal {
-  display: flex;
-  justify-content: space-between;
-}
-
-.overlay-modal h2 {
-  text-align: center;
-}
-
-.close-icon {
-  cursor: pointer;
+  color: white;
 }
 
 .submit-check {
-  margin: 30px 0;
+  margin: 30px 25px;
   display: flex;
-  width: 97.5%;
+  width: 100%;
   white-space: nowrap;
   align-items: center;
+  color: black;
 }
 
 .submit-check input {
-  margin: 0 30px;
+  margin-right: 30px;
 }
 
-.content-modal {
-  margin: 0 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.modal p {
+  margin: 10px 30px;
 }
 
-.content-modal p {
-  margin: 0 30px;
-}
-
-.content-modal form {
-  margin: 20px 30px;
+.search {
+  margin-right: 50px;
 }
 
 .button-modal {
@@ -69,27 +57,5 @@
 .button-flex {
   display: flex;
   justify-content: space-between;
-  margin: 10px 30px;
-}
-
-@media (max-width: 768px) {
-  .submit-check input {
-    margin: 0 10px;
-  }
-
-  .content-modal {
-    margin: 0;
-  }
-
-  .content-modal p {
-    margin: 0 20px;
-  }
-
-  .content-modal form {
-    margin: 20px 10px;
-  }
-
-  .button-flex {
-    margin: 10px 10px;
-  }
+  margin: 30px 8px;
 }
