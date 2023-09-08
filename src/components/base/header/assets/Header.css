@@ -1,44 +1,41 @@
-@font-face {
-  font-family: "SUITE-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-.header {
+nav.navbar {
+  padding: 18px 0;
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 7.5rem;
-  background-image: url("../assets/space.jpg");
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  font-size: 1.25rem;
+  top: 0;
+  z-index: 10;
+  transition: 0.32s ease-in-out;
 }
 
-.navigation-bar a {
-  color: white;
-  text-decoration: none;
-  margin-left: 0.75rem;
-  padding-left: 0.3rem;
+nav.navbar.scrolled {
+  padding: 0px 0;
+  background-color: #000000;
 }
 
-h1 {
-  font-family: "SUITE-Regular";
-  color: white;
-  margin-left: 2rem;
-  font-display: left;
-  font-size: 3rem;
-  font-weight: bolder;
+nav.navbar .navbar-brand {
+  width: 200px;
 }
-h2 {
-  font-family: "SUITE-Regular";
-  color: white;
-  font-weight: lighter;
-  font-size: 3rem;
+
+nav.navbar .navbar-nav .nav-link.navbar-link {
+  font-weight: 400;
+  color: #fff !important;
+  letter-spacing: 0.8px;
+  padding: 0 25px;
+  font-size: 18px;
+  opacity: 0.75;
+}
+
+nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
+nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+  opacity: 1;
+}
+
+@media (max-width: 485px) {
+  nav.navbar .navbar-brand {
+    width: 130px;
+  }
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    font-size: 15px;
+    padding: 0 5px;
+  }
 }

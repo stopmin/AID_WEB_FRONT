@@ -1,20 +1,54 @@
-import React from "react";
-import "./assets/Header.css"; // Import the CSS file
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import { ModalExample } from "../../modal/Modal";
+import logo from "../../../assets/img/logo.svg";
+import "./assets/Header.css";
 
-const Header = () => {
+export const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <div className="header">
-      <h1>AID</h1>
-      <h2>elopver</h2>
-
-      {/* <div>
-        <Link to="/intro">동아리 소개</Link>
-        <Link to="/login">로그인</Link>
-        <Link to="/board">게시판</Link>
-        <Link to="/club-apply">동아리 지원</Link>
-      </div> */}
-    </div>
+    <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+      <Container>
+        <Navbar.Brand>
+          <Link to="/">
+            <img src={logo} alt="AIDeveloper" />
+          </Link>
+        </Navbar.Brand>
+        <Nav className="ms-auto">
+          {location.pathname !== "/admin" && (
+            <Nav.Link className="navbar-link">
+              {location.pathname === "/submit" ? (
+                <>
+                  <ModalExample />
+                </>
+              ) : (
+                <>
+                  <Link to="/submit" className="no-underline">
+                    지원하기
+                  </Link>
+                </>
+              )}
+            </Nav.Link>
+          )}
+        </Nav>
+      </Container>
+    </Navbar>
   );
 };
-
-export default Header;
